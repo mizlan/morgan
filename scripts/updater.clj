@@ -5,7 +5,7 @@
 
 (def *port* 55901)
 
-(def base (slurp "base.md"))
+(def base (slurp "/Users/michaellan/code/morgan/scripts/base.md"))
 (def gh-repo-path "/Users/michaellan/code/mizlan/")
 (def output-path (str gh-repo-path "/README.md"))
 
