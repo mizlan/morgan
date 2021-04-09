@@ -1,7 +1,6 @@
 #!/usr/bin/env bb
 
-(require '[babashka.fs :as fs]
-         '[bencode.core :as b])
+(require '[bencode.core :as b])
 
 (def *port* 55901)
 
