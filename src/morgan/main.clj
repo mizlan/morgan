@@ -49,6 +49,13 @@
 (defn format-date [date]
   (.format (java.text.SimpleDateFormat. "hh:mma MM/dd") date))
 
+(defn format-elapsed [ms]
+  (let [secs (quot ms 1000)]
+    (format "%ds" secs)))
+
+(defn format-entry [{:keys [program elapsed endtime]}]
+  (format "| `%s` | %s | %s |" program (format-elapsed elapsed) (format-date endtime)))
+
 (comment
   (get-most-recent conn 2)
   (format-date (current-time))
