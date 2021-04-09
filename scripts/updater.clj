@@ -2,7 +2,7 @@
 
 (require '[bencode.core :as b])
 
-(def *port* 55901)
+(def *port* (Integer/parseInt (slurp "/Users/michaellan/code/morgan/.nrepl-port")))
 
 (def base (slurp "/Users/michaellan/code/morgan/scripts/base.md"))
 (def gh-repo-path "/Users/michaellan/code/mizlan/")
