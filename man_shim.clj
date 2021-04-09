@@ -4,7 +4,7 @@
   (:require [bencode.core :as b]))
 
 ;; TODO: have a global file for manpages
-(def *port* 54387)
+(def *port* 55901)
 
 (defn interactive-prog [args]
   (let [process-builder (java.lang.ProcessBuilder. args)
