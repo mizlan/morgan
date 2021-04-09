@@ -3,8 +3,8 @@
 (ns man-shim
   (:require [bencode.core :as b]))
 
-;; TODO: have a global file for manpages
-(def *port* 55901)
+;; HACK: use the file with hardcoded path to file
+(def *port* (Integer/parseInt (slurp "/Users/michaellan/code/morgan/.nrepl-port")))
 
 (defn interactive-prog [args]
   (let [process-builder (java.lang.ProcessBuilder. args)
