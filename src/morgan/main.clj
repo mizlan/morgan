@@ -46,7 +46,11 @@
 (defn current-time []
   (java.util.Date.))
 
+(defn format-date [date]
+  (.format (java.text.SimpleDateFormat. "hh:mma MM/dd") date))
+
 (comment
   (get-most-recent conn 2)
+  (format-date (current-time))
   (add-entry conn {:program "emacs" :elapsed 234829342 :finish (current-time)})
   )
