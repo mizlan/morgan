@@ -8,14 +8,16 @@
 
 (comment
   (d/delete-database client {:db-name "man"})
-  (d/create-database client {:db-name "man"}))
+  (d/create-database client {:db-name "man"})
+  )
 
 (def conn (d/connect client {:db-name "man"}))
 
 (comment
   (def db (d/db conn))
   (d/transact conn {:tx-data schema/entry})
-  (d/transact conn {:tx-data ex/data}))
+  (d/transact conn {:tx-data ex/data})
+  )
 
 (defn get-db-data [conn]
   (let [db (d/db conn)]
@@ -46,6 +48,5 @@
 
 (comment
   (get-most-recent conn 2)
-  (add-entry conn {:program "bruddah" :elapsed 10 :finish (current-time)})
   (add-entry conn {:program "emacs" :elapsed 234829342 :finish (current-time)})
   )
