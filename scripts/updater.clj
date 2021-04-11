@@ -22,8 +22,7 @@
 (defn morgan-eval [expr]
   (nrepl-eval *port* expr "morgan.main"))
 
-
-(let [ranks (morgan-eval "(map format-entry (get-most-recent conn 5))")]
+(let [ranks (morgan-eval "(map format-entry (get-most-recent conn 10))")]
   (spit output-path
         (str
          base
