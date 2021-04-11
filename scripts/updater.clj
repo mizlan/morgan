@@ -5,6 +5,7 @@
 (def *port* (Integer/parseInt (slurp "/Users/michaellan/code/morgan/.nrepl-port")))
 
 (def base (slurp "/Users/michaellan/code/morgan/scripts/base.md"))
+(def footer "hacked together [here](https://git.sr.ht/~mizlan/morgan)")
 (def gh-repo-path "/Users/michaellan/code/mizlan/")
 (def output-path (str gh-repo-path "/README.md"))
 
@@ -29,7 +30,10 @@
          "\n"
          "| program | elapsed | finished |\n"
          "| :---    | :---    | :---     |\n"
-         (str/join "\n" (read-string ranks)))))
+         (str/join "\n" (read-string ranks))
+         "\n\n"
+         footer
+         "\n")))
 
 (shell/with-sh-dir gh-repo-path
   (shell/sh "bash" "-c" "git add README.md")
