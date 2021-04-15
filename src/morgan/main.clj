@@ -57,7 +57,7 @@
   (format "| `%s` | %s | %s |" program (format-elapsed elapsed) (format-date endtime)))
 
 (comment
-  (get-most-recent conn 2)
+  (get-most-recent conn 5)
   (format-date (current-time))
   (add-entry conn {:program "emacs" :elapsed 234829342 :finish (current-time)})
   )
