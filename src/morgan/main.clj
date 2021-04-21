@@ -6,18 +6,8 @@
 (def client (d/client {:server-type :dev-local
                        :system "morgan"}))
 
-(comment
-  (d/delete-database client {:db-name "man"})
-  (d/create-database client {:db-name "man"})
-  )
 
 (def conn (d/connect client {:db-name "man"}))
-
-(comment
-  (def db (d/db conn))
-  (d/transact conn {:tx-data schema/entry})
-  (d/transact conn {:tx-data ex/data})
-  )
 
 (defn get-db-data [conn]
   (let [db (d/db conn)]
@@ -55,6 +45,17 @@
 
 (defn format-entry [{:keys [program elapsed endtime]}]
   (format "| `%s` | %s | %s |" program (format-elapsed elapsed) (format-date endtime)))
+
+(comment
+  (d/delete-database client {:db-name "man"})
+  (d/create-database client {:db-name "man"})
+  )
+
+(comment
+  (def db (d/db conn))
+  (d/transact conn {:tx-data schema/entry})
+  (d/transact conn {:tx-data ex/data})
+  )
 
 (comment
   (get-most-recent conn 5)
