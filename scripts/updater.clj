@@ -5,7 +5,7 @@
 (def *port* (Integer/parseInt (slurp "/Users/michaellan/code/morgan/.nrepl-port")))
 
 (def base (slurp "/Users/michaellan/code/morgan/scripts/base.md"))
-(def footer "hacked together [here](https://git.sr.ht/~mizlan/morgan)")
+(def footer "hacked together [here](https://github.com/mizlan/morgan)")
 (def gh-repo-path "/Users/michaellan/code/mizlan/")
 (def output-path (str gh-repo-path "/README.md"))
 
